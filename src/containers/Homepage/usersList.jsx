@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 import { makeSelectUsers } from './selectors';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const Button = styled.a`
-  /* This renders the buttons above... Edit me! */
+  /* This renders the buttons above... Edit me! */s
   display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
@@ -50,6 +51,13 @@ export const UsersList = (props) => {
 
   const isEmptyUsers = !users || (users && users.length === 0);
 
+  const navigate = useNavigate();
+
+  const goToUserPage = (id) => {
+    // console.log(history);
+    navigate(`/user/${id}`);
+  };
+
   if (isEmptyUsers) {
     return null;
   }
@@ -59,7 +67,7 @@ export const UsersList = (props) => {
       <UsersContainers>
         {users.map((user, id) => {
           return (
-            <UserWrapper key={id}>
+            <UserWrapper key={id} onClick={() => goToUserPage(user.id)}>
               <UserImage>
                 <img src={user.avatar} alt='' />
               </UserImage>
