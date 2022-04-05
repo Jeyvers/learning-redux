@@ -1,0 +1,24 @@
+Course Structure
+
+- Functional programming
+- Fundamentals of Redux 
+- Build redux from scratch
+- Debugging
+- Write clean code
+-
+- Redux Store
+- Middleware
+- Calling APIs
+- Testing Redux Apps
+- Integration with React
+
+Explanation
+- Functional programming
+    - Object-oriented
+    - Procedural
+    - Event-driven 
+        - More conscise
+        - Easier to deubg 
+        - Easier to test
+        - More scalable 
+Functions are first-cass citizens, we can treat them like every other vairable. We can assign them to a variable, pass them as arguments and return them from other functions
