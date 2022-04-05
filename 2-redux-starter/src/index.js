@@ -1,15 +1,23 @@
-// Currying
-import { compose, pipe } from 'lodash/fp.js';
-let input = ' JavaScript ';
-const trim = (str) => str.trim();
-// Problem: Codes look alike
-// const wrapInDiv = (str) => `<div>${str}</div>`;
-// const wrapInSpan = (str) => `<span>${str}</span>`;
+// Pure Functions
+const person = {
+  name: 'John',
+  address: {
+    country: 'USA',
+    city: 'San Francisco',
+  },
+};
+// Copies person object to a new object and updates the new object
+// const updatedObj = Object.assign({}, person, { name: 'Bob', age: 30 });
 
-// Solution
-const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
-const toLowerCase = (str) => str.toLowerCase();
-const transform = pipe(trim, toLowerCase, wrap('div'));
+// Does same thing as above code
+// Spread operators word shallow updates
+const updated = {
+  ...person,
+  address: {
+    ...person.address,
+    city: 'New York',
+  },
+  name: 'Bob',
+};
 
-transform(input);
-console.log(transform(input));
+console.log(updated, person);

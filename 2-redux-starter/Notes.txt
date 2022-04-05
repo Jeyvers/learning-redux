@@ -13,7 +13,7 @@ Course Structure
 - Integration with React
 
 Explanation
-- Functional programming
+1. sFunctional programming
     - Object-oriented
     - Procedural
     - Event-driven 
@@ -26,3 +26,28 @@ Explanation
 Functions are first-cass citizens, we can treat them like every other vairable. We can assign them to a variable, pass them as arguments and return them from other functions
 
 Higher order functions are functions that take a function as an argument or/and returns it. 
+
+Pure Functions: 
+- No random values
+- No current date/time
+- No global state (DOM, files, db, etc)
+- No mutation of parameters
+    Reducers must be pure functions
+
+    Benefits of pure functions 
+    - Self-documenting (everything a function needs is specified)
+    - Easily testable
+    - Concurrency 
+    - Cacheable 
+ - Arrays and objects are immutable. const doesn't make it immutable, it makes it impossible to reassign
+ 
+    Benefits of immutability
+    - Predictability
+    - Faster Change Detection
+    - Concurrency
+
+    Debenefits of immutability
+    - Slower performance
+    - Memory overhead
+    
+- Structural sharing precents memory overhead by sharing data.
