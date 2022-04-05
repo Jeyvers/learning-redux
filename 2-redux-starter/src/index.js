@@ -1,16 +1,6 @@
-function sayHello() {
-  return function () {
-    return 'hello world';
-  };
-}
+let numbers = [1, 2, 3];
+numbers.map((number) => number * 2);
 
-let fn = sayHello;
-let message = fn();
-
-function greet(fnMessage) {
-  console.log(fnMessage());
-}
-
-greet(sayHello);
-console.log(fn);
-console.log(message);
+setTimeout(() => {
+  console.log('hello');
+}, 1000);
