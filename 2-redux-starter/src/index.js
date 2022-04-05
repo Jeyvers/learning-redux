@@ -1,13 +1,15 @@
-// Fucntion Composition
+import { compose, pipe } from 'lodash/fp.js';
+// Fucntion Composition using loadash
 let input = ' JavaScript ';
-let output = '<div>' + input.trim() + '</div>';
-
-// Reusable functions
-// trim
-// wrapInDiv
 const trim = (str) => str.trim();
 const wrapInDiv = (str) => `<div>${str}</div>`;
 const toLowerCase = (str) => str.toLowerCase();
-// Problems: comprehension requires right to left reading && complicated number of parenthesis may occur when dealing with lager applications
-const result = wrapInDiv(toLowerCase(trim(input)));
-console.log(result);
+
+// Solves multiple brackets problem
+// const transform = compose(wrapInDiv, toLowerCase, trim);
+
+// Solves reading left to right problem
+const transform = pipe(trim, toLowerCase, wrapInDiv);
+
+transform(input);
+console.log(transform(input));
