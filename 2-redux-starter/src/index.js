@@ -1,6 +1,13 @@
-let numbers = [1, 2, 3];
-numbers.map((number) => number * 2);
+// Fucntion Composition
+let input = ' JavaScript ';
+let output = '<div>' + input.trim() + '</div>';
 
-setTimeout(() => {
-  console.log('hello');
-}, 1000);
+// Reusable functions
+// trim
+// wrapInDiv
+const trim = (str) => str.trim();
+const wrapInDiv = (str) => `<div>${str}</div>`;
+const toLowerCase = (str) => str.toLowerCase();
+// Problems: comprehension requires right to left reading && complicated number of parenthesis may occur when dealing with lager applications
+const result = wrapInDiv(toLowerCase(trim(input)));
+console.log(result);
