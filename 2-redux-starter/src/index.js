@@ -1,12 +1,16 @@
 function sayHello() {
-  return 'Hello World';
+  return function () {
+    return 'hello world';
+  };
 }
 
 let fn = sayHello;
-fn();
+let message = fn();
 
 function greet(fnMessage) {
   console.log(fnMessage());
 }
 
 greet(sayHello);
+console.log(fn);
+console.log(message);
