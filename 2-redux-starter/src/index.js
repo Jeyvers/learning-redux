@@ -1,23 +1,13 @@
-// Pure Functions
-const person = {
-  name: 'John',
-  address: {
-    country: 'USA',
-    city: 'San Francisco',
-  },
-};
-// Copies person object to a new object and updates the new object
-// const updatedObj = Object.assign({}, person, { name: 'Bob', age: 30 });
+const numbers = [1, 2, 3];
 
-// Does same thing as above code
-// Spread operators word shallow updates
-const updated = {
-  ...person,
-  address: {
-    ...person.address,
-    city: 'New York',
-  },
-  name: 'Bob',
-};
+// adding
+// To set a number at a specific place
+const index = numbers.indexOf(2);
+const added = [...numbers.slice(0, index), 4, ...numbers.slice(index)];
 
-console.log(updated, person);
+// Removing
+const removed = numbers.filter((n) => n !== 2);
+
+// Updating
+const updated = numbers.map((n) => (n === 2 ? 20 : n));
+console.log(updated);
